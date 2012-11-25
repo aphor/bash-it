@@ -26,6 +26,8 @@ export HISTSIZE=100000
 shopt -s cdspell
 shopt -s dirspell
 
+alias macvim='open -a '/Applications/MacVim.app''
+
 # Override function from bobby theme
 function prompt_command() {
     PS1="${purple}\u${red}@${purple}\h ${reset_color}in ${green}\w\n${bold_cyan}$(scm_char)${green}$(scm_prompt_info) ${green}→${reset_color} "
