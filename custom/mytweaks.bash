@@ -27,6 +27,8 @@ shopt -s cdspell
 shopt -s dirspell
 
 alias macvim='open -a '/Applications/MacVim.app''
+alias gd='git diff | /usr/bin/vim -'
+alias tree='find . -print | grep -v .DS_Store | sed -e '\''s;[^/]*/;|____;g;s;____|; |;g'\'''
 
 # Override function from bobby theme
 function prompt_command() {
