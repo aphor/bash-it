@@ -20,7 +20,7 @@ alias cp='cp -i'
 alias ln='ln -i'
  
 # custom variables
-export HISTSIZE=50000
+export HISTSIZE=100000
 
 # set shell options
 shopt -s cdspell
@@ -31,4 +31,4 @@ function prompt_command() {
     PS1="${purple}\u${red}@${purple}\h ${reset_color}in ${green}\w\n${bold_cyan}$(scm_char)${green}$(scm_prompt_info) ${green}→${reset_color} "
 }
 
-PROMPT_COMMAND=${PROMPT_COMMAND};history -a;
+export PROMPT_COMMAND="history -a; history -c; history -r; prompt_command;$PROMPT_COMMAND"
