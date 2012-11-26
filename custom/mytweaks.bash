@@ -18,6 +18,11 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
+
+# Apt
+alias aps='sudo apt-cache search'
+alias apg='sudo apt-get'
+alias apu='sudo apt-get update'
  
 # custom variables
 export HISTSIZE=100000
@@ -36,4 +41,4 @@ function prompt_command() {
     PS1="${purple}\u${red}@${purple}\h ${reset_color}in ${green}\w\n${bold_cyan}$(scm_char)${green}$(scm_prompt_info) ${green}→${reset_color} "
 }
 
-export PROMPT_COMMAND="history -a; history -c; history -r; prompt_command;$PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
