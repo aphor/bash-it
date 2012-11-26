@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#
+#  Eventually I need to set these based on whether you're on OSX vs Linux vs etc.
 
 # unset things from .bash_it
 unset t
@@ -31,10 +33,10 @@ export HISTSIZE=100000
 shopt -s cdspell
 shopt -s dirspell
 
+# Mac specific
 alias macvim='open -a '/Applications/MacVim.app''
-alias gd='git diff | /usr/bin/vim -'
+alias socks='ssh -fND 8888 69.175.54.34'
 alias tree='find . -print | grep -v .DS_Store | sed -e '\''s;[^/]*/;|____;g;s;____|; |;g'\'''
-alias socks='ssh -fND 8888 hp'
 
 # Override function from bobby theme
 function prompt_command() {
