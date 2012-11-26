@@ -22,9 +22,9 @@ alias cp='cp -i'
 alias ln='ln -i'
 
 # Apt
-alias aps='sudo apt-cache search'
-alias apg='sudo apt-get'
-alias apu='sudo apt-get update'
+alias aps='sudo aptitude search'
+alias apu='sudo aptitude update'
+alias api='sudo aptitutde install'
  
 # custom variables
 export HISTSIZE=100000
