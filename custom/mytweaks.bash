@@ -25,7 +25,17 @@ alias cp='cp -i'
 alias ln='ln -i'
 
 # aptitude/apt-get
-if [ -e "/usr/bin/aptitude" ];
+if [ -e "/usr/bin/apt-get" ];
+then
+    alias apti='sudo apt-get install'
+    alias aptp='sudo apt-get --purge remove'
+    alias aptr='sudo apt-get remove'
+    alias apts='sudo apt-cache search'
+    alias aptsh='sudo apt-cache show'
+    alias aptud='sudo apt-get update'
+    alias aptug='sudo apt-get upgrade'
+
+elif [ -e "/usr/bin/aptitude" ];
 then
     alias apti='sudo aptitude install'
     alias aptp='sudo aptitude purge'
@@ -34,23 +44,10 @@ then
     alias aptsh='sudo aptitude show'
     alias aptud='sudo aptitude update'
     alias aptug='sudo aptitude safe-upgrade'
-    break
-
-elif [ -e "/usr/bin/apt-get" ];
-then
-    alias apti='sudo apt-get install'
-    alias aptp='sudo apt-get --purge remove'
-    alias aptr='sudo apt-get remove'
-    alias apts='sudo apt-cache search'
-    alias aptsh='sudo apt-cache show'
-    alias aptshpkg='sudo apt-cache showpkg'
-    alias aptud='sudo apt-get update'
-    alias aptug='sudo apt-get upgrade'
 fi
  
 # custom variables
 export HISTSIZE=100000
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # set shell options
 shopt -s cdspell
@@ -63,10 +60,11 @@ alias tree='find . -print | grep -v .DS_Store | sed -e '\''s;[^/]*/;|____;g;s;__
 # Home specific
 alias proxy_up='ssh -fND 8888 69.175.54.34'
 
-# Override function from bobby theme
+# Override prompt from bobby theme
 function prompt_command() {
     PS1="${purple}\u${red}@${purple}\h ${reset_color}in ${green}\w\n${bold_cyan}$(scm_char)${green}$(scm_prompt_info) ${green}→${reset_color} "
 }
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # Smarter psgrep
 function psgrep() {
