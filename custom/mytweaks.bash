@@ -24,7 +24,6 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
 
-<<<<<<< HEAD
 # aptitude/apt-get
 if [ -e "/usr/bin/aptitude" ];
 then
@@ -48,12 +47,6 @@ then
     alias aptupdate='sudo apt-get update'
     alias aptupgrade='sudo apt-get upgrade'
 fi
-=======
-# Apt
-alias aps='sudo aptitude search'
-alias apu='sudo aptitude update'
-alias api='sudo aptitutde install'
->>>>>>> 62c3b44f6d1f62b64a925dc38f93e6bada47b257
  
 # custom variables
 export HISTSIZE=100000
