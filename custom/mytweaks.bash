@@ -27,7 +27,7 @@ alias ln='ln -i'
 # aptitude/apt-get
 if [ -e "/usr/bin/aptitude" ];
 then
-    alias aptininstall='sudo aptitude install'
+    alias aptinstall='sudo aptitude install'
     alias aptpurge='sudo aptitude purge'
     alias aptremove='sudo aptitude remove'
     alias aptsearch='sudo aptitude search'
