@@ -27,25 +27,25 @@ alias ln='ln -i'
 # aptitude/apt-get
 if [ -e "/usr/bin/aptitude" ];
 then
-    alias aptinstall='sudo aptitude install'
-    alias aptpurge='sudo aptitude purge'
-    alias aptremove='sudo aptitude remove'
-    alias aptsearch='sudo aptitude search'
-    alias aptshow='sudo aptitude show'
-    alias aptupdate='sudo aptitude update'
-    alias aptupgrade='sudo aptitude safe-upgrade'
+    alias apti='sudo aptitude install'
+    alias aptp='sudo aptitude purge'
+    alias aptr='sudo aptitude remove'
+    alias apts='sudo aptitude search'
+    alias aptsh='sudo aptitude show'
+    alias aptud='sudo aptitude update'
+    alias aptug='sudo aptitude safe-upgrade'
     break
 
 elif [ -e "/usr/bin/apt-get" ];
 then
-    alias aptinstall='sudo apt-get install'
-    alias aptpurge='sudo apt-get --purge remove'
-    alias aptremove='sudo apt-get remove'
-    alias aptsearch='sudo apt-cache search'
-    alias aptshow='sudo apt-cache show'
-    alias aptshowpkg='sudo apt-cache showpkg'
-    alias aptupdate='sudo apt-get update'
-    alias aptupgrade='sudo apt-get upgrade'
+    alias apti='sudo apt-get install'
+    alias aptp='sudo apt-get --purge remove'
+    alias aptr='sudo apt-get remove'
+    alias apts='sudo apt-cache search'
+    alias aptsh='sudo apt-cache show'
+    alias aptshpkg='sudo apt-cache showpkg'
+    alias aptud='sudo apt-get update'
+    alias aptug='sudo apt-get upgrade'
 fi
  
 # custom variables
