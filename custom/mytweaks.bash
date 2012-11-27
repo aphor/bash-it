@@ -52,6 +52,7 @@ export HISTSIZE=100000
 # set shell options
 shopt -s cdspell
 shopt -s dirspell
+shopt -s nocaseglob
 
 # Mac specific
 alias macvim='open -a '/Applications/MacVim.app''
@@ -69,4 +70,9 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # Smarter psgrep
 function psgrep() {
     ps auwwx | egrep "^USER|$@" | grep -v grep
+}
+
+function locate() {
+    locate=`which locate`
+    $locate $@ | xargs ls -lsh   
 }
