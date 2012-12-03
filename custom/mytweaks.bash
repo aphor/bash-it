@@ -65,7 +65,8 @@ alias proxy_up='ssh -fND 8888 hp'
 function prompt_command() {
     PS1="${purple}\u${red}@${purple}\h ${reset_color}in ${green}\w\n${bold_cyan}$(scm_char)${green}$(scm_prompt_info) ${green}→${reset_color} "
 }
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export SET_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}\007"'
+export PROMPT_COMMAND="$SET_TITLE; history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # Smarter psgrep
 function psgrep() {
