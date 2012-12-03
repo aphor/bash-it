@@ -89,9 +89,8 @@ function ssh_addkey() {
     then
         echo "Missing argument." 
     else
-        echo "Adding $HOME/.ssh/id_rsa.pub to $@:"
+        echo "Appending $HOME/.ssh/id_rsa.pub to $@:"
         echo $pubkey | ssh $host 'sh -c "cat - >>~/.ssh/authorized_keys"'
-        echo "...done"
         echo
     fi
 }
