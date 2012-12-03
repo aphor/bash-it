@@ -79,15 +79,18 @@ function locate() {
 }
 
 function ssh_addkey() {
+    host=$@
     pubkey=`cat $HOME/.ssh/id_rsa.pub`
 
-    if [ -z "$pubkey" ] ;
+    if [ ! -e "$pubkey" ]
     then
         echo "No host key to add." 
-        exit
+    elif [ -z "$host" ]
+    then
+        echo "Missing argument." 
     else
         echo "Adding $HOME/.ssh/id_rsa.pub to $@:"
-        echo $pubkey | ssh $@ 'sh -c "cat - >>~/.ssh/authorized_keys"'
+        echo $pubkey | ssh $host 'sh -c "cat - >>~/.ssh/authorized_keys"'
         echo "...done"
         echo
     fi
