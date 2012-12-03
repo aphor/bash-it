@@ -77,3 +77,18 @@ function locate() {
     locate=`which locate`
     $locate $@ | xargs ls -lsh   
 }
+
+function ssh_addkey() {
+    pubkey=`cat $HOME/.ssh/id_rsa.pub`
+
+    if [ -z "$pubkey" ] ;
+    then
+        echo "No host key to add." 
+        exit
+    else
+        echo "Adding $HOME/.ssh/id_rsa.pub to $@:"
+        echo $pubkey | ssh $@ 'sh -c "cat - >>~/.ssh/authorized_keys"'
+        echo "...done"
+        echo
+    fi
+}
