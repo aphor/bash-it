@@ -93,4 +93,6 @@ function ssh_addkey() {
         cat $pubkey | ssh $host 'sh -c "cat - >>~/.ssh/authorized_keys"'
         echo
     fi
+
+    ssh $host
 }
