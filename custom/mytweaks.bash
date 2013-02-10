@@ -59,7 +59,7 @@ alias macvim='open -a '/Applications/MacVim.app''
 alias tree='find . -print | grep -v .DS_Store | sed -e '\''s;[^/]*/;|____;g;s;____|; |;g'\'''
 
 # Home specific
-alias proxy_up='ssh -fND 8888 hp'
+alias setup_socks5_proxy='ssh -fND 8888 hp'
 
 # Override prompt from bobby theme
 function prompt_command() {
@@ -94,5 +94,5 @@ function ssh_addkey() {
         echo
     fi
 
-    ssh $host
+    ssh -X $host
 }
