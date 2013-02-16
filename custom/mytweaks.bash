@@ -73,6 +73,7 @@ function psgrep() {
     ps auwwx | egrep "^USER|$@" | grep -v grep
 }
 
+# Smarter locate
 function locate() {
     locate=`which locate`
     $locate $@ | xargs ls -lsh   
