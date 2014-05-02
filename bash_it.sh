@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Initialize Bash It
 
 # Reload Library
