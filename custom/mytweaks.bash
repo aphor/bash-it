@@ -51,7 +51,7 @@ export HISTSIZE=100000
 
 # set shell options
 shopt -s cdspell
-shopt -s dirspell
+#shopt -s dirspell
 shopt -s nocaseglob
 
 # Mac specific
