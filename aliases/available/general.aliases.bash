@@ -13,10 +13,10 @@ alias _="sudo"
 
 if [ $(uname) = "Linux" ]
 then
-  alias ls="ls --color=always"
+  alias ls="ls --color=auto"
 fi
 which gshuf &> /dev/null
-if [ $? -eq 1 ]
+if [ $? -eq 0 ]
 then
   alias shuf=gshuf
 fi
@@ -40,7 +40,7 @@ alias piano='pianobar'
 
 alias ..='cd ..'         # Go up one directory
 alias ...='cd ../..'     # Go up two directories
-alias ....='cd ../../..' # Go up two directories
+alias ....='cd ../../..' # Go up three directories
 alias -- -='cd -'        # Go back
 
 # Shell History
