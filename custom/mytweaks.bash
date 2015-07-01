@@ -11,7 +11,9 @@ alias j='jobs -l'
 alias df='df -h'
 alias du='du -h'
 alias g='grep --color=auto'
+alias greo='grep --color=auto'
 alias grep='grep --color=auto'
+alias grpe='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
@@ -96,4 +98,10 @@ function ssh_addkey() {
     fi
 
     ssh -X $host
+}
+
+ssh() {
+    tmux rename-window "$*"
+    command ssh "$@"
+    exit
 }
