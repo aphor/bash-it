@@ -100,8 +100,8 @@ function ssh_addkey() {
     ssh -X $host
 }
 
-ssh() {
+function ssh() {
     tmux rename-window "$*"
     command ssh "$@"
-    exit
+    tmux rename-window "bash"
 }
