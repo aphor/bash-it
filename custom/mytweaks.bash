@@ -47,6 +47,10 @@ then
     alias aptud='sudo aptitude update'
     alias aptug='sudo aptitude safe-upgrade'
 fi
+
+# work related
+
+alias fix-svlchi5pwebseq1='ssh root@svlchi5pwebseq1 "killall wsdserver ; /etc/init.d/websequencediagrams restart"'
  
 # custom variables
 export HISTSIZE=100000
